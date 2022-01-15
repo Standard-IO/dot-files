@@ -7,29 +7,46 @@ There are confi files that work with keybinding dependencies.
 ### Base files to build packages
 
 `base-devel`
+
 `openssl`
+
 `zlib`
+
 `xz`
 
 #### windows manager and other related
 
 `xorg` - como backend del windows manager.
+
 `qtile` - Windows manager.
+
 `picom-git` - xorg's compositor develop version.
+
 `lightdm` - Display manager.
+
 `lightdm-gtk-greeter` - Greeter for start session.
+
 `lightdm-locker` - Screen locker. 
 
+
 #### Terminal
+
 `allacrity` - terminal emulator
+
 `oh-my-bash`- needs to buld.
 
 #### Multimedia
+
 `playerctl` - Multimedia keys. 
+
 `alsa` - Audio control.
+
 `alsamixer` - middleware.
+
 `pavucontrol` -  application inteface.
+
 `pulseAudio` -  Interface app.
+
 
 #### Others
 
@@ -44,15 +61,20 @@ There are confi files that work with keybinding dependencies.
 ### nvim dependencies
 
 `nvim`
+
 `xclip` - Copy text out and inside vim's clipboard.
+
 `vim-plug` - needs to be build.
+
 `nodejs`- To languages server
+
 `npm` - nodejs package manager
 
 
 ### Bluethoot control
 
 `bluez`
+
 `bluez-utils`
 
 Note:
@@ -64,20 +86,28 @@ Consequently is needed enable the service to be initialized with the systemclt.
 
 To control the system exists a command line utility, the next code enable the bluethooth with a device.
 #### Turn on and basic configuration.
->    bluethoothctl
->    power on
->    agent on
->    default-agent "this reconect your devices
+
+```
+bluethoothctl
+power on
+agent on
+default-agent "this reconect your devices
+
+```
 
 #### To connect a device this with command line utility (bluethoothctl):
 
->    scan on " Scan every bluetooth devices around
->    scan off " To deactivate sdevice scan. 
->    devices " Print all devices scaned 
 
->    trust <Device Mac adress> " you can use tab auto comple
->    pair <Device Mac adress> " Same Mac adress.
->    connect <Mac adress>
+```
+scan on " Scan every bluetooth devices around
+scan off " To deactivate sdevice scan. 
+devices " Print all devices scaned 
+
+trust <Device Mac adress> " you can use tab auto comple
+pair <Device Mac adress> " Same Mac adress.
+connect <Mac adress>
+
+```
  
 
 To avoid Bluethoot restart every time you restar your computer change in the file
@@ -86,5 +116,6 @@ and there change the line
    autoenable = true.
 
 ### Bluethoot audio
+
 `pulse-audio-bluethooth`
 
