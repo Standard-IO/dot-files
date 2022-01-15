@@ -1,58 +1,59 @@
 # My personal config files 
+
 This is my personal config to work with arch linux only rofi config was taken from a personal repo. Because it's a really cool design.
 
 There are confi files that work with keybinding dependencies.
 
-## Base files to build packages
+### Base files to build packages
 
-'base-devel'
-'openssl'
-'zlib'
-'xz'
+`base-devel`
+`openssl`
+`zlib`
+`xz`
 
-## windows manager and other related
+#### windows manager and other related
 
-'xorg' - como backend del windows manager.
-'qtile' - Windows manager.
-'picom-git' - xorg's compositor develop version.
-'lightdm' - Display manager.
-'lightdm-gtk-greeter' - Greeter for start session.
-'lightdm-locker' - Screen locker. 
+`xorg` - como backend del windows manager.
+`qtile` - Windows manager.
+`picom-git` - xorg's compositor develop version.
+`lightdm` - Display manager.
+`lightdm-gtk-greeter` - Greeter for start session.
+`lightdm-locker` - Screen locker. 
 
-### Terminal
-'allacrity' - terminal emulator
-'oh-my-bash'- needs to buld.
+#### Terminal
+`allacrity` - terminal emulator
+`oh-my-bash`- needs to buld.
 
-### Multimedia
-'playerctl' - Multimedia keys. 
-'alsa' - Audio control.
-'alsamixer' - middleware.
-'pavucontrol' -  application inteface.
-'pulseAudio' -  Interface app.
+#### Multimedia
+`playerctl` - Multimedia keys. 
+`alsa` - Audio control.
+`alsamixer` - middleware.
+`pavucontrol` -  application inteface.
+`pulseAudio` -  Interface app.
 
-### Others
+#### Others
 
-'NetworkManager' - Network configuration.
+`NetworkManager` - Network configuration.
 
-'scrot' - ScreentShot.
+`scrot` - ScreentShot.
 
-'nitrogen' - Screen Bacground app.
+`nitrogen` - Screen Bacground app.
 
-'yay' - Manager to Aur packages (Arch system).
+`yay` - Manager to Aur packages (Arch system).
 
-## nvim dependencies
+### nvim dependencies
 
-'nvim'
-'xclip' - Copy text out and inside vim's clipboard.
-'vim-plug' - needs to be build.
-'nodejs'- To languages server
-'npm' - nodejs package manager
+`nvim`
+`xclip` - Copy text out and inside vim's clipboard.
+`vim-plug` - needs to be build.
+`nodejs`- To languages server
+`npm` - nodejs package manager
 
 
-## Bluethoot control
+### Bluethoot control
 
-'bluez'
-'bluez-utils'
+`bluez`
+`bluez-utils`
 
 Note:
 Check that the packages are installed.
@@ -62,13 +63,13 @@ Consequently is needed enable the service to be initialized with the systemclt.
    sudo systemctl enable bluethooth.service
 
 To control the system exists a command line utility, the next code enable the bluethooth with a device.
-### Turn on and basic configuration.
+#### Turn on and basic configuration.
 >    bluethoothctl
 >    power on
 >    agent on
 >    default-agent "this reconect your devices
 
-### To connect a device this with command line utility (bluethoothctl):
+#### To connect a device this with command line utility (bluethoothctl):
 
 >    scan on " Scan every bluetooth devices around
 >    scan off " To deactivate sdevice scan. 
@@ -84,6 +85,6 @@ To avoid Bluethoot restart every time you restar your computer change in the fil
 and there change the line
    autoenable = true.
 
-# Bluethoot audio
-'pulse-audio-bluethooth'
+### Bluethoot audio
+`pulse-audio-bluethooth`
 
