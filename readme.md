@@ -4,6 +4,8 @@ This is my personal config to work with arch linux only rofi config was taken fr
 
 There are confi files that work with keybinding dependencies.
 
+![screetshot_desktop](./assets/screenshot.png)
+
 ### Base files to build packages
 
 `base-devel`
