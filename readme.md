@@ -79,10 +79,15 @@ There are confi files that work with keybinding dependencies.
 
 Note:
 Check that the packages are installed.
-   bluthood con lsmod | grep btusb
+
+`bluthood con lsmod | grep btusb`
+
 Consequently is needed enable the service to be initialized with the systemclt. 
-   sudo systemctl start bluethooth.service
-   sudo systemctl enable bluethooth.service
+
+```
+sudo systemctl start bluethooth.service
+sudo systemctl enable bluethooth.service
+```
 
 To control the system exists a command line utility, the next code enable the bluethooth with a device.
 #### Turn on and basic configuration.
@@ -92,7 +97,6 @@ bluethoothctl
 power on
 agent on
 default-agent "this reconect your devices
-
 ```
 
 #### To connect a device this with command line utility (bluethoothctl):
@@ -106,14 +110,10 @@ devices " Print all devices scaned
 trust <Device Mac adress> " you can use tab auto comple
 pair <Device Mac adress> " Same Mac adress.
 connect <Mac adress>
-
 ```
  
 
-To avoid Bluethoot restart every time you restar your computer change in the file
-   sudo vim /etc/bluetooth/main.conf
-and there change the line
-   autoenable = true.
+To avoid Bluethoot restart every time you restar your computer change in the file `sudo vim /etc/bluetooth/main.conf` and there change the line `autoenable = true`.
 
 ### Bluethoot audio
 
