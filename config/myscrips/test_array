@@ -1,0 +1,22 @@
+#! /bin/sh
+ 
+myarr=(HTML JavaScript PHP jQuery AngularJS CodeIgniter)
+ 
+#Count total number of elements of the array
+total=${#myarr[*]}
+echo "Total elements: $total"
+ 
+#Print each element value of the array
+echo "Array values :"
+for val in ${myarr[*]}
+do
+printf "   %s\n" $val
+done
+ 
+#Print each element value of the array with key
+ 
+echo "Array values with key:"
+for key in ${!myarr[*]}
+do
+printf "%4d: %s\n" $key ${myarr[$key]}
+done
