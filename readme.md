@@ -26,7 +26,11 @@ There are confi files that work with keybinding dependencies.
 
 `lightdm` - Display manager.
 
-`lightdm-gtk-greeter` - Greeter for start session.
+`lightdm-gtk-greeter` - Greeter for a normal start session.
+
+`lightdm-gtk-webkit2-greeter` - Greeter for install themes.
+
+`lightdm-webkit2-theme-glorious` - Theme for webkit2 (see git hub page)
 
 `lightdm-locker` - Screen locker. 
 
