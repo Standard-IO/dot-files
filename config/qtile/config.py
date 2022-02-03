@@ -31,13 +31,13 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-
 mod = "mod4"
 terminal = guess_terminal()
 
 import os
 import subprocess
 from libqtile import hook
+
 
 home = os.path.expanduser("~")
 
@@ -51,7 +51,7 @@ def autostart():
     subprocess.Popen([home+'/.config/qtile/autostart.sh']) 
 
 mod = "mod4"
-#terminal = guess_terminal()
+terminal = guess_terminal()
 terminal = "alacritty"
 
 def separador():
@@ -63,6 +63,7 @@ def separador():
 interfaz_red = "wlp1s0"
 
 # Colores predeterminados
+
 CL_ACTIVE ="f6ff15"
 CL_INACTIVE = "787c99"
 CL_BKG = "282a36"
@@ -76,7 +77,6 @@ CL_OLDTERM = "33ff00"
 
 CL_HIGH_1 = "4a06cd"
 CL_HIGH_2 = "9716de"
-
 # Tamaño de letras
 FONT_SZ = 15
 SYMBOL_SZ = 25
@@ -167,7 +167,9 @@ keys.extend([
         desc="subir brillo de pantalla"),
      ])
 
-# Capturas de pantalla
+# ScreenShot sections
+# This section uses scrips to avoid conflicts with spawn method.
+# All the files needs to have execution permision
 keys.extend([
     Key([mod], "s",
         lazy.spawn(home+"/.config/myscrips/screen.sh"),
@@ -175,6 +177,9 @@ keys.extend([
     Key([mod, "shift"], "s",
         lazy.spawn(home+"/.config/myscrips/screen_cut.sh"),
         desc="captura de seleccion de pantalla"),
+    Key([mod, "shift"], "a",
+        lazy.spawn(home+"/.config/myscrips/screenClip.sh"),
+        desc="screenshot to clipboard for use"),
     ])
 
 groups = [Group(i) for i in "123456789"]
@@ -227,23 +232,29 @@ screens = [
                 separador(),
                 widget.CryptoTicker(
                     foreground = CL_GREEN,
-                    update_interval = 60
+                    update_interval = 10
                 ),
                 separador(),
                 widget.CryptoTicker(
                     crypto = 'ETH',
                     foreground = CL_GREEN,
-                    update_interval = 60
+                    update_interval = 10
                 ),
                 separador(),
                 widget.CryptoTicker(
                     crypto = 'ADA',
                     foreground = CL_GREEN,
-                    update_interval = 60
+                    update_interval = 10
+                ),
+                separador(),
+                widget.CryptoTicker(
+                    crypto = 'DOGE',
+                    foreground = CL_GREEN,
+                    update_interval = 10
                 ),
                 separador(),
                 widget.Spacer(
-                    length = 400 
+                    length = 250 
                     ),
                 widget.GroupBox(
                    active= CL_GREEN,
@@ -253,6 +264,8 @@ screens = [
                    highlight_color = [CL_HIGH_1, CL_HIGH_2], 
                    other_screen_border = CL_GREEN, 
                    this_current_screen_border = CL_GREEN,
+                   other_current_screen_border = CL_ORANGE,
+                   this_screen_border = CL_GREEN,
                      ),
                 widget.Prompt(),
                 widget.Spacer(),
@@ -343,5 +356,3 @@ auto_minimize = True
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
-
