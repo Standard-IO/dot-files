@@ -44,7 +44,7 @@ Plug 'neoclide/coc.nvim', {'branch':'release'} " Intellisence
 
 call plug#end()
 
-colorscheme dracula
+"colorscheme dracula
 
 "colorscheme gruvbox
 "gruv box configuration
